@@ -23,15 +23,7 @@ struct ContentView: View {
                 TextField("", text: $thirdText)
                 TextField("", text: $fourthText)
                 TextField("", text: $fifthText)
-                Button {
-                    let firstNumber = Int(firstText) ?? 0
-                    let secondNumber = Int(secondText) ?? 0
-                    let thirdNumber = Int(thirdText) ?? 0
-                    let fourthNumber = Int(fourthText) ?? 0
-                    let fifthNumber = Int(fifthText) ?? 0
-                    let calculationResults = firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber
-                    sumOfAdditions = String(calculationResults)
-                } label: {
+                Button(action: didTapButton) {
                     Text("Button")
                 }
                 Text(sumOfAdditions)
@@ -46,10 +38,19 @@ struct ContentView: View {
             }
             .frame(width: 100)
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            
+
             Spacer()
         }
         .padding()
+    }
+
+    private func didTapButton() {
+        let firstNumber = Int(firstText) ?? 0
+        let secondNumber = Int(secondText) ?? 0
+        let thirdNumber = Int(thirdText) ?? 0
+        let fourthNumber = Int(fourthText) ?? 0
+        let fifthNumber = Int(fifthText) ?? 0
+        sumOfAdditions = String(firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber)
     }
 }
 
