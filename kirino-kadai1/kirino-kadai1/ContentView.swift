@@ -19,20 +19,10 @@ struct ContentView: View {
         HStack {
             VStack {
                 TextField("", text: $firstText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $secondText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $thirdText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $fourthText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $fifthText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button {
                     let firstNumber = Int(firstText) ?? 0
                     let secondNumber = Int(secondText) ?? 0
@@ -40,7 +30,6 @@ struct ContentView: View {
                     let fourthNumber = Int(fourthText) ?? 0
                     let fifthNumber = Int(fifthText) ?? 0
                     let calculationResults = firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber
-                    print(firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber)
                     sumOfAdditions = String(calculationResults)
                 } label: {
                     Text("Button")
@@ -52,10 +41,12 @@ struct ContentView: View {
                         bottom: 0,
                         trailing: 40
                     ))
-                    .frame(width: 100.0)
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
+            .frame(width: 100)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            
             Spacer()
         }
         .padding()
