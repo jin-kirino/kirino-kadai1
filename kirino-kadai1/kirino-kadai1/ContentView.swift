@@ -34,14 +34,7 @@ struct ContentView: View {
                     .frame(width: 100)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button {
-                    let firstNumber = Int(firstText) ?? 0
-                    let secondNumber = Int(secondText) ?? 0
-                    let thirdNumber = Int(thirdText) ?? 0
-                    let fourthNumber = Int(fourthText) ?? 0
-                    let fifthNumber = Int(fifthText) ?? 0
-                    let calculationResults = firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber
-                    print(firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber)
-                    sumOfAdditions = String(calculationResults)
+                    didButtonTap()
                 } label: {
                     Text("Button")
                 }
@@ -59,6 +52,17 @@ struct ContentView: View {
             Spacer()
         }
         .padding()
+    }
+
+    private func didButtonTap() {
+        let firstNumber = Int(firstText) ?? 0
+        let secondNumber = Int(secondText) ?? 0
+        let thirdNumber = Int(thirdText) ?? 0
+        let fourthNumber = Int(fourthText) ?? 0
+        let fifthNumber = Int(fifthText) ?? 0
+        let calculationResults = firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber
+        print(firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber)
+        sumOfAdditions = String(calculationResults)
     }
 }
 
