@@ -19,20 +19,10 @@ struct ContentView: View {
         HStack {
             VStack {
                 TextField("", text: $firstText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $secondText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $thirdText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $fourthText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("", text: $fifthText)
-                    .frame(width: 100)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button {
                     didButtonTap()
                 } label: {
@@ -49,6 +39,8 @@ struct ContentView: View {
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
+            .frame(width: 100)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
             Spacer()
         }
         .padding()
