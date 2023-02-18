@@ -23,6 +23,7 @@ struct ContentView: View {
                 TextField("", text: $thirdText)
                 TextField("", text: $fourthText)
                 TextField("", text: $fifthText)
+
                 Button(action: didTapButton) {
                     Text("Button")
                 }
@@ -38,7 +39,6 @@ struct ContentView: View {
             }
             .frame(width: 100)
             .textFieldStyle(RoundedBorderTextFieldStyle())
-
             Spacer()
         }
         .padding()
